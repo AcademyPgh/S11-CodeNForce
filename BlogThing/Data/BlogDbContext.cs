@@ -15,5 +15,7 @@ namespace BlogThing.Data
 
         public DbSet<SecurityUser> User { get; set; }
         public DbSet<SecurityGroup> Groups { get; set; }
+
+        public DbSet<Complaint> Complaints {get; set;}
     }
 }
