@@ -12797,10 +12797,11 @@ a {
   background: rgba(200, 200, 200, 0.2); }
 
 .main-panel {
-  position: relative;
-  float: right;
-  width: calc(100% - 260px);
-  transition: 0.33s, cubic-bezier(0.685, 0.0473, 0.346, 1); }
+    position: relative;
+    float: right;
+    width: calc(100% - 260px);
+    transition: 0.33s, cubic-bezier(0.685, 0.0473, 0.346, 1);
+}
   .main-panel > .content {
     margin-top: 70px;
     padding: 30px 15px;
@@ -12823,10 +12824,12 @@ a {
 .sidebar,
 .main-panel,
 .sidebar-wrapper {
-  transition-property: top,bottom, width;
-  transition-duration: .2s,.2s, .35s;
-  transition-timing-function: linear,linear,ease;
-  -webkit-overflow-scrolling: touch; }
+    background-image: url(https://www.knowol.com/wp-content/uploads/2018/01/Turtle-Creek-PA-cv.jpg);
+    transition-property: top,bottom, width;
+    transition-duration: .2s,.2s, .35s;
+    transition-timing-function: linear,linear,ease;
+    -webkit-overflow-scrolling: touch;
+}
 
 .visible-on-sidebar-regular {
   display: inline-block !important; }
