@@ -71,6 +71,17 @@ body {
 }
 
 .sidebar[data-background-color=black] .sidebar-background:after {
-  background: #000;
   opacity: .6;
+  background: rgb(0,0,0);
+ 
 }
+.nav-link{
+  background: linear-gradient(90deg, rgba(0,0,0,1) 69%, rgba(12,61,15,1) 100%, rgba(0,255,51,1) 100%);
+}
+.logo-img {
+  width: 50px; /* width of container */
+  height: 50px; /* height of container */
+  object-fit: cover;
+  margin-left: 10px;
+}
+
