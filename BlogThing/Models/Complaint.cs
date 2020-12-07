@@ -17,16 +17,16 @@ namespace BlogThing.Models
         public int ZIP { get; set; }
         [Required]
         [Phone]
-        public string Phone {get; set;}
-        public int AddressID {get; set;}
-        public IssueType IssueType {get; set;}
-        public string ComplaintDescription {get; set;}
-        public string PublicNotes {get; set;}
-        public string PrivateNotes {get; set;}
-        public bool HumanSafety { get; set;}
-        public string Notes { get; set;}
-        public SecurityUser User {get; set;}
-        public CECase CECase {get; set;}
+        public string Phone { get; set; }
+        public int AddressID { get; set; }
+        public IssueType IssueType { get; set; }
+        public string ComplaintDescription { get; set; }
+        public string PublicNotes { get; set; }
+        public string PrivateNotes { get; set; }
+        public bool HumanSafety { get; set; }
+        public string Notes { get; set; }
+        public SecurityUser User { get; set; }
+        public CECase CECase { get; set; }
 
     }
 
