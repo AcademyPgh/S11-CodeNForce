@@ -25,7 +25,7 @@ namespace BlogThing.Controllers
             return View();
         }
 
-        [Authorize(Roles ="Administrator")]
+        [Authorize(Roles = "Administrator")]
         public IActionResult Privacy()
         {
             return View();
@@ -36,7 +36,5 @@ namespace BlogThing.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-
-        
     }
 }
