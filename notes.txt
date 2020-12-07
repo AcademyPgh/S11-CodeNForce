@@ -1,0 +1,68 @@
+CE Complaint: 
+
+- ID (int)
+
+- Public access reference number (PACC) (int)
+
+- Status (string selected from a set list... what are the options here?)
+    - Needs to be processed (bool); does this need a column or can it be derived from status?
+
+- Address (string)
+    - Properties might have to be their own model, or possibly we can just use the string here
+        - Probably their own model but can be grabbed from county DB
+
+- Issue type (string, selected from predetermined list with "Other" option)
+    - Tall grass or excessive weeds
+    - Excessive trash
+    - Rodent or bug infestation
+    - Inappropriate signage
+    - Signs of abandonment
+    - Unsightly material storage
+    - Other/not listed 
+
+- Human safety issue (bool)
+
+- Age...? (time submitted? DateTime?) 
+
+- Request description (text from user)
+
+- Photo(s) (List<Photos>)
+
+- Attached to CE case (bool; does this need a column or can we reference the case table directly?)
+
+- Officer-only notes
+
+- System internal...?
+
+- Public notes
+
+- Requestor (has exactly one)
+
+
+CE Case:
+
+- ID (int)
+
+- exactly one Property (how to represent?)
+
+- some number of Complaints (List<Complaint>)
+
+Requestor: 
+
+- ID (int)
+
+- Address (string)
+
+- Phone(s) (List<String>)
+
+- Email (string)
+
+- Which of the following best describes you? (string, from a list)
+
+Photos:
+
+- ID
+
+- Filename
+
+- Description
