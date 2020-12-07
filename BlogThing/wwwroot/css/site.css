@@ -75,7 +75,7 @@ body {
   background: rgb(0,0,0);
  
 }
-.nav-link{
+.barisactive{
   background: linear-gradient(90deg, rgba(0,0,0,1) 69%, rgba(12,61,15,1) 100%, rgba(0,255,51,1) 100%);
 }
 .logo-img {

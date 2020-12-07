@@ -16,7 +16,7 @@
 
 <body>
     <div class="wrapper ">
-        <div class="sidebar" data-color="green" data-background-color="black"
+        <div class="sidebar" data-background-color="black"
             data-image="https://www.knowol.com/wp-content/uploads/2018/01/Turtle-Creek-PA-cv.jpg">
             <!--
       Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
@@ -34,21 +34,21 @@
             </div>
             <div class="sidebar-wrapper">
                 <ul class="nav">
-
-                    <li class="nav-item active  ">
-                        <a class="nav-link" href="#0">
+                    <li class="@Html.IsSelected(controllers: "Home", actions: "Index", cssClass: "barisactive") nav-item">
+                        <a class="nav-link" href="@Url.Action("Index", "Home")">
+                            <i class="material-icons">dashboard</i>
+                            <p>Home</p>
+                        </a>
+                    </li>
+                    <li class="@Html.IsSelected(controllers: "Complaint", actions: "Index", cssClass: "barisactive") nav-item">
+                        <a class="nav-link" href="@Url.Action("Index", "Complaint")">
                             <i class="material-icons">dashboard</i>
                             <p>Report</p>
                         </a>
                     </li>
-                    <li class="nav-item active  ">
-                        <a class="nav-link" href="#0">
-                            <i class="material-icons">dashboard</i>
-                            <p>Occupancy Permits</p>
-                        </a>
-                    </li>
-                    <li class="nav-item active  ">
-                        <a class="nav-link" href="#0">
+                    
+                    <li class="@Html.IsSelected(controllers: "Home", actions: "Index", cssClass: "barisactive") nav-item">
+                        <a class="nav-link" href="@Url.Action("Index", "Home")">
                             <i class="material-icons">dashboard</i>
                             <p>Rental Registration</p>
                         </a>
