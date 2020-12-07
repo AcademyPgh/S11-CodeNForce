@@ -27,13 +27,11 @@ namespace BlogThing.Models
         public string Notes { get; set; }
         public SecurityUser User { get; set; }
         public CECase CECase { get; set; }
-
     }
 
     public class CECase
     {
         public int Id {get; set;}
-
     }
 
     public class IssueType
