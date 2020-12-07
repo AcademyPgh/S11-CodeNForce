@@ -88,3 +88,15 @@ body {
 .card .card-header-danger:not(.card-header-icon):not(.card-header-text) {
   background: linear-gradient(60deg,#57c471,#259531);
 }
+
+.row-flex {
+  display: flex;
+  justify-content: center;
+  flex: none !important;
+}
+
+.row-flex-baby {
+flex: none;
+width: auto;
+
+}
