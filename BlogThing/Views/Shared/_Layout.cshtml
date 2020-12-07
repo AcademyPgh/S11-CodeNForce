@@ -16,28 +16,44 @@
 
 <body>
     <div class="wrapper ">
-        <div class="sidebar" data-color="purple" data-background-color="white">
+        <div class="sidebar" data-background-color="black"
+            data-image="https://www.knowol.com/wp-content/uploads/2018/01/Turtle-Creek-PA-cv.jpg">
             <!--
       Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
       Tip 2: you can also add an image using data-image tag
   -->
             <div class="logo">
-                <a href="http://www.creative-tim.com" class="simple-text logo-mini">
-                    CT
-                </a>
+
+                <img class="logo-img" src='@Url.Content("~/images/logo.png")'>
+            </div>
+            <div>
                 <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-                    Creative Tim
+                    Staff Login
                 </a>
             </div>
             <div class="sidebar-wrapper">
                 <ul class="nav">
-                    <li class="nav-item active  ">
-                        <a class="nav-link" href="#0">
+                    <li class="@Html.IsSelected(controllers: "Home", actions: "Index", cssClass: "barisactive") nav-item">
+                        <a class="nav-link" href="@Url.Action("Index", "Home")">
                             <i class="material-icons">dashboard</i>
-                            <p>Dashboard</p>
+                            <p>Home</p>
                         </a>
                     </li>
+                    <li class="@Html.IsSelected(controllers: "Complaint", actions: "Index", cssClass: "barisactive") nav-item">
+                        <a class="nav-link" href="@Url.Action("Index", "Complaint")">
+                            <i class="material-icons">dashboard</i>
+                            <p>Report</p>
+                        </a>
+                    </li>
+                    
+                    <li class="@Html.IsSelected(controllers: "Home", actions: "Index", cssClass: "barisactive") nav-item">
+                        <a class="nav-link" href="@Url.Action("Index", "Home")">
+                            <i class="material-icons">dashboard</i>
+                            <p>Rental Registration</p>
+                        </a>
+                    </li>
+
                     <!-- your sidebar here -->
                 </ul>
             </div>
@@ -47,7 +63,7 @@
             <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
                 <div class="container-fluid">
                     <div class="navbar-wrapper">
-                        <a class="navbar-brand" href="javascript:;">Dashboard</a>
+                        <a class="navbar-brand" href="javascript:;">CodeNForce</a>
                     </div>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -58,11 +74,12 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-end">
                         <ul class="navbar-nav">
-                            <li class="nav-item">
+                            @* <li class="nav-item">
                                 <a class="nav-link" href="javascript:;">
-                                    <i class="material-icons">notifications</i> Notifications
+                                <i class="material-icons">notifications</i> Notifications
                                 </a>
-                            </li>
+                                </li> *@
+
                             <!-- your navbar here -->
                         </ul>
                     </div>
@@ -80,7 +97,7 @@
                         <ul>
                             <li>
                                 <a href="https://www.creative-tim.com">
-                                    Creative Tim
+                                    CodeNForce
                                 </a>
                             </li>
                         </ul>
