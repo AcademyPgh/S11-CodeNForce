@@ -4,14 +4,16 @@ using BlogThing.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BlogThing.Migrations
 {
     [DbContext(typeof(BlogDbContext))]
-    partial class BlogDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201207154951_GenerateComplaints")]
+    partial class GenerateComplaints
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -59,7 +61,7 @@ namespace BlogThing.Migrations
                     b.Property<bool>("HumanSafety")
                         .HasColumnType("bit");
 
-                    b.Property<int?>("IssueTypeId")
+                    b.Property<int>("IssueType")
                         .HasColumnType("int");
 
                     b.Property<string>("Notes")
@@ -94,26 +96,9 @@ namespace BlogThing.Migrations
 
                     b.HasIndex("CECaseId");
 
-                    b.HasIndex("IssueTypeId");
-
                     b.HasIndex("UserId");
 
                     b.ToTable("Complaints");
-                });
-
-            modelBuilder.Entity("BlogThing.Models.IssueType", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
-
-                    b.Property<string>("IssueDescription")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("IssueType");
                 });
 
             modelBuilder.Entity("BlogThing.Models.SecurityGroup", b =>
@@ -167,17 +152,11 @@ namespace BlogThing.Migrations
                         .WithMany()
                         .HasForeignKey("CECaseId");
 
-                    b.HasOne("BlogThing.Models.IssueType", "IssueType")
-                        .WithMany()
-                        .HasForeignKey("IssueTypeId");
-
                     b.HasOne("BlogThing.Models.SecurityUser", "User")
                         .WithMany()
                         .HasForeignKey("UserId");
 
                     b.Navigation("CECase");
-
-                    b.Navigation("IssueType");
 
                     b.Navigation("User");
                 });

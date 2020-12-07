@@ -30,21 +30,15 @@ namespace BlogThing.Models
 
     }
 
-    public enum IssueType 
-    {
-        TallGrassAndExcessiveWeeds,
-        ExcessiveTrash,
-        RodentOrBugInfestation,
-        InappropriateSignange,
-        SignsOfAbandonment,
-        UnsightlyMaterialStorage,
-        OtherNotListed
-
-    }
-
     public class CECase
     {
         public int Id {get; set;}
 
+    }
+
+    public class IssueType
+    {
+        public int Id { get; set; }
+        public string IssueDescription { get; set; }
     }
 }
