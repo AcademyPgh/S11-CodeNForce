@@ -1,23 +1,23 @@
 ﻿@model BlogThing.Models.Complaint
 
-<!-- MultiStep Form -->
-<div class="container-fluid" id="grad1">
-    <div class="row justify-content-center mt-0">
-        <div class="col-11 col-sm-9 col-md-7 col-lg-6 text-center p-0 mt-3 mb-2">
-            <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
-                <h2><strong>Sign Up Your User Account</strong></h2>
-                <p>Fill all form field to go to next step</p>
-                <div class="row">
-                    <div class="col-md-12 mx-0">
-                        <form asp-action="Create" id="msform">
-                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                            <!-- progressbar -->
-                            <ul id="progressbar">
-                                <li class="active fas fa-home" @*id="account"*@><strong>What</strong></li>
-                                <li class="far fa-angry" @*id="personal"*@><strong>It</strong></li>
-                                <li class="fas fa-toilet-paper" @*id="payment"*@><strong>Do</strong></li>
-                                <li class="fas fa-book-dead" @*id="confirm"*@><strong>Booooo</strong></li>
-                            </ul> <!-- fieldsets -->
+    <!-- MultiStep Form -->
+    <div class="container-fluid" id="grad1">
+        <div class="row justify-content-center mt-0">
+            <div class="col-11 col-sm-9 col-md-7 col-lg-6 text-center p-0 mt-3 mb-2">
+                <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+                    <h2><strong>Sign Up Your User Account</strong></h2>
+                    <p>Fill all form field to go to next step</p>
+                    <div class="row">
+                        <div class="col-md-12 mx-0">
+                            <form asp-action="Create" id="msform">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <!-- progressbar -->
+                                <ul id="progressbar">
+                                    <li class="active fas fa-home" @*id="account"*@><strong>What</strong></li>
+                                    <li class="far fa-angry" @*id="personal"*@><strong>It</strong></li>
+                                    <li class="fas fa-toilet-paper" @*id="payment"*@><strong>Do</strong></li>
+                                    <li class="fas fa-book-dead" @*id="confirm"*@><strong>Booooo</strong></li>
+                                </ul> <!-- fieldsets -->
                             <fieldset>
                                 <div class="form-card">
                                     <h2 class="fs-title">What It Do Boo</h2>
@@ -26,23 +26,23 @@
                             <fieldset>
                                 <div class="form-card">
                                     @*<label asp-for="SubmissionDate" class="control-label"></label>
-                                    <input asp-for="SubmissionDate" class="form-control" />
-                                    <span asp-validation-for="SubmissionDate" class="text-danger"></span>
-                                    <label asp-for="Address1" class="control-label"></label>
-                                    <input asp-for="Address1" class="form-control" />
-                                    <span asp-validation-for="Address1" class="text-danger"></span>
-                                    <label asp-for="City" class="control-label"></label>
-                                    <input asp-for="City" class="form-control" />
-                                    <span asp-validation-for="City" class="text-danger"></span>
-                                    <label asp-for="State" class="control-label"></label>
-                                    <input asp-for="State" class="form-control" />
-                                    <span asp-validation-for="State" class="text-danger"></span>*@
+                                        <input asp-for="SubmissionDate" class="form-control" />
+                                        <span asp-validation-for="SubmissionDate" class="text-danger"></span>
+                                        <label asp-for="Address1" class="control-label"></label>
+                                        <input asp-for="Address1" class="form-control" />
+                                        <span asp-validation-for="Address1" class="text-danger"></span>
+                                        <label asp-for="City" class="control-label"></label>
+                                        <input asp-for="City" class="form-control" />
+                                        <span asp-validation-for="City" class="text-danger"></span>
+                                        <label asp-for="State" class="control-label"></label>
+                                        <input asp-for="State" class="form-control" />
+                                        <span asp-validation-for="State" class="text-danger"></span>*@
                                     <label asp-for="ZIP" class="control-label"></label>
                                     <input asp-for="ZIP" class="form-control" />
                                     <span asp-validation-for="ZIP" class="text-danger"></span>
                                     @*<label asp-for="Address2" class="control-label"></label>
-                                    <input asp-for="Address2" class="form-control" />
-                                    <span asp-validation-for="Address2" class="text-danger"></span>*@
+                                        <input asp-for="Address2" class="form-control" />
+                                        <span asp-validation-for="Address2" class="text-danger"></span>*@
 
                                 </div> <input type="button" name="previous" class="previous action-button-previous" value="Previous" /> <input type="button" name="next" class="next action-button" value="Next Step" />
                             </fieldset>
@@ -61,11 +61,11 @@
                                     <input asp-for="ComplaintDescription" class="form-control" />
                                     <span asp-validation-for="ComplaintDescription" class="text-danger"></span>
                                     @*<label asp-for="PublicNotes" class="control-label"></label>
-                                    <input asp-for="PublicNotes" class="form-control" />
-                                    <span asp-validation-for="PublicNotes" class="text-danger"></span>
-                                    <label asp-for="PrivateNotes" class="control-label"></label>
-                                    <input asp-for="PrivateNotes" class="form-control" />
-                                    <span asp-validation-for="PrivateNotes" class="text-danger"></span>*@
+                                        <input asp-for="PublicNotes" class="form-control" />
+                                        <span asp-validation-for="PublicNotes" class="text-danger"></span>
+                                        <label asp-for="PrivateNotes" class="control-label"></label>
+                                        <input asp-for="PrivateNotes" class="form-control" />
+                                        <span asp-validation-for="PrivateNotes" class="text-danger"></span>*@
                                     <div class="form-group form-check">
                                         <label class="form-check-label">
                                             <input class="form-check-input" asp-for="HumanSafety" /> @Html.DisplayNameFor(model => model.HumanSafety)

@@ -87,6 +87,10 @@ namespace BlogThing.Controllers
         {
             return View();
         }
+        public IActionResult CreateOG()
+        {
+            return View();
+        }
 
 
         // GET: Complaints/Edit/5

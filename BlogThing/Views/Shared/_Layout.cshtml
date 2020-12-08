@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - CodeNForce</title>
     <!-- Fonts and icons -->
-    <link rel="stylesheet" type="text/css"
-          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    @*<link rel="stylesheet" type="text/css" />*@
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <link href="~/css/material-dashboard.min.css?v=2.1.2" rel="stylesheet" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
@@ -37,29 +37,32 @@
             </div>
             <div class="sidebar-wrapper">
                 <ul class="nav">
-                    <li class="@Html.IsSelected(controllers: "Home", actions: "Index", cssClass: "barisactive") nav-item">
+                    <li
+                        class="@Html.IsSelected(controllers: "Home", actions: "Index", cssClass: "barisactive") nav-item">
                         <a class="nav-link" href="@Url.Action("Index", "Home")">
-                            <i class="material-icons">dashboard</i>
+                            <i class="material-icons"></i>
                             <p>Home</p>
                         </a>
                     </li>
-                    <li class="@Html.IsSelected(controllers: "Complaints", actions: "Create", cssClass: "barisactive") nav-item">
+                    <li
+                        class="@Html.IsSelected(controllers: "Complaints", actions: "Create", cssClass: "barisactive") nav-item">
                         <a class="nav-link" href="@Url.Action("Create", "Complaints")">
-                            <i class="material-icons">dashboard</i>
-                            <p>Report</p>
+                            <i class="material-icons"></i>
+                            <p>Report Code Violation</p>
                         </a>
                     </li>
 
-                    <li class="@Html.IsSelected(controllers: "Home", actions: "Testss", cssClass: "barisactive") nav-item">
-                        <a class="nav-link" href="@Url.Action("Testss", "Home")">
-                            <i class="material-icons">dashboard</i>
+                    <li
+                        class="@Html.IsSelected(controllers: "Complaints", actions: "CreateOG", cssClass: "barisactive") nav-item">
+                        <a class="nav-link" href="@Url.Action("CreateOG", "Complaints")">
+                            <i class="material-icons"></i>
                             <p>Rental Registration</p>
                         </a>
                     </li>
 
                     <li class="@Html.IsSelected(controllers: "Complaints", actions: "Index", cssClass: "barisactive") nav-item">
                         <a class="nav-link" href="@Url.Action("Index", "Complaints")">
-                            <i class="material-icons">dashboard</i>
+                            <i class="material-icons"></i>
                             <p>View Dem Snitches</p>
                         </a>
                     </li>

@@ -1,0 +1,84 @@
+﻿@model BlogThing.Models.Complaint
+
+<!-- MultiStep Form -->
+<div class="container-fluid" id="grad1">
+    <div class="row justify-content-center mt-0">
+        <div class="col-11 col-sm-9 col-md-7 col-lg-6 text-center p-0 mt-3 mb-2">
+            <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+                <h2><strong>Report Concern of Code Violation</strong></h2>
+                <p>Fill all form fields to continue to the next step</p>
+                <div class="row">
+                    <div class="col-md-12 mx-0">
+                        <form asp-action="Create" id="msform">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <!-- progressbar -->
+                            <ul id="progressbar">
+                                <li class="active fas fa-home" @*id="account"*@><strong>Location</strong></li>
+                                <li class="far fa-angry" @*id="personal"*@><strong>Concern</strong></li>
+                                <li class="fas fa-toilet-paper" @*id="payment"*@><strong>My Info</strong></li>
+                                <li class="fas fa-book-dead" @*id="confirm"*@><strong>Complete</strong></li>
+                            </ul> <!-- fieldsets -->
+                            <fieldset>
+                                <div class="form-card">
+                                    <h2 class="fs-title">Location of Concern</h2>
+                                    <label asp-for="Address1" class="control-label">Address of violation</label>
+                                    <input asp-for="Address1" class="form-control" />
+                                    <span asp-validation-for="Address1" class="text-danger"></span>
+                                    <label asp-for="City" class="control-label"></label>
+                                    <input asp-for="City" class="form-control" />
+                                    <span asp-validation-for="City" class="text-danger"></span>
+                                    <label asp-for="State" class="control-label"></label>
+                                    <input asp-for="State" class="form-control" />
+                                    <span asp-validation-for="State" class="text-danger"></span>
+                                    <label asp-for="ZIP" class="control-label"></label>
+                                    <input asp-for="ZIP" class="form-control" />
+                                    <span asp-validation-for="ZIP" class="text-danger"></span>
+                                </div> <input type="button" name="next" class="next action-button" value="Next Step" />
+                            </fieldset>
+                            <fieldset>
+                                <div class="form-card">
+                                    <h2 class="fs-title">Violation</h2>
+                                    <label asp-for="IssueType" class="control-label">What is the issue?</label>
+                                    <select asp-for="IssueType" class="form-control"></select>
+                                    <span asp-validation-for="IssueType" class="text-danger"></span>
+                                    <label asp-for="ComplaintDescription" class="control-label">What is your
+                                        concern?</label>
+                                    <textarea asp-for="ComplaintDescription" class="form-control"></textarea>
+                                    <span asp-validation-for="ComplaintDescription" class="text-danger"></span>
+                                </div> <input type="button" name="previous" class="previous action-button-previous"
+                                    value="Previous" /> <input type="button" name="next" class="next action-button"
+                                    value="Next Step" />
+                            </fieldset>
+                            <fieldset>
+                                <div class="form-card">
+                                    <h2 class="fs-title">Contact Info</h2>
+                                    <label for="Email" class="control-label">Email</label>
+                                    <input type="email" name="Email" />
+                                    <label asp-for="Phone" class="control-label"></label>
+                                    <input asp-for="Phone" class="form-control" />
+                                    <span asp-validation-for="Phone" class="text-danger"></span>
+                                </div> <input type="button" name="previous" class="previous action-button-previous"
+                                    value="Previous" /> <input type="Submit" name="make_payment"
+                                    class="next action-button" value="Confirm" />
+                            </fieldset>
+                            <fieldset>
+                                <div class="form-card">
+                                    <h2 class="fs-title text-center">Success !</h2> <br><br>
+                                    <div class="row justify-content-center">
+                                        <div class="col-3"> <img src="https://img.icons8.com/color/96/000000/ok--v2.png"
+                                                class="fit-image"> </div>
+                                    </div> <br><br>
+                                    <div class="row justify-content-center">
+                                        <div class="col-7 text-center">
+                                            <h5>Your concern has been registered.</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
