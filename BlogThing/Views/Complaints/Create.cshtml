@@ -45,7 +45,8 @@
                                     <span asp-validation-for="IssueType" class="text-danger"></span>
                                     <label asp-for="ComplaintDescription" class="control-label">What is your
                                         concern?</label>
-                                    <textarea asp-for="ComplaintDescription" class="form-control"></textarea>
+                                    <textarea id="complaint-box" rows="10" asp-for="ComplaintDescription"
+                                        class="form-control form-block"></textarea>
                                     <span asp-validation-for="ComplaintDescription" class="text-danger"></span>
                                     @* <label asp-for="PublicNotes" class="control-label"></label>
                                         <input asp-for="PublicNotes" class="form-control" />
