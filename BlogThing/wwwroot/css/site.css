@@ -86,5 +86,5 @@ body {
 }
 
 .card .card-header-danger:not(.card-header-icon):not(.card-header-text) {
-  background: linear-gradient(60deg,#57c471,#259531);
+  background: linear-gradient(60deg,#1b6ec2,#259531);
 }
