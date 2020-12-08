@@ -282,7 +282,8 @@ select.list-dt:focus {
 
 #progressbar li.active:before,
 #progressbar li.active:after {
-  background: skyblue
+  background: rgb(93, 188, 210);
+  
 }
 
 .radio-group {
@@ -315,6 +316,7 @@ select.list-dt:focus {
   object-fit: cover
 }
 
+
 .row-center{
   display: flex;
   justify-content: center;
@@ -338,3 +340,4 @@ select.list-dt:focus {
   border: 1px solid #d2d2d2;
   border-radius: .25rem;
 }
+
