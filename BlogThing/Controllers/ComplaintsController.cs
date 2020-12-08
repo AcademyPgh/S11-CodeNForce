@@ -22,7 +22,7 @@ namespace BlogThing.Controllers
         // GET: Complaints
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Complaints.ToListAsync());
+            return View(await _context.Complaints.Include(c => c.Images).ToListAsync());
         }
 
         // GET: Complaints/Details/5
