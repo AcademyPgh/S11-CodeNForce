@@ -314,3 +314,22 @@ select.list-dt:focus {
   width: 100%;
   object-fit: cover
 }
+
+.row-center{
+  display: flex;
+  justify-content: center;
+}
+
+.row-center > .col-md-6 {
+  flex: auto;
+  max-width: 400px;
+}
+
+.card-home {
+  height: 200px;
+}
+
+.textarea {
+  height: 5em;
+}
+  
