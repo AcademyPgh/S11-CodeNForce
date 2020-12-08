@@ -78,11 +78,16 @@ namespace BlogThing.Controllers
             if (ModelState.IsValid)
             {
                 _context.Add(complaint);
-                //await _context.SaveChangesAsync();
-                //return RedirectToAction(nameof(Index));
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Doneso));
             }
             return View(complaint);
         }
+        public IActionResult Doneso()
+        {
+            return View();
+        }
+
 
         // GET: Complaints/Edit/5
         public async Task<IActionResult> Edit(int? id)
