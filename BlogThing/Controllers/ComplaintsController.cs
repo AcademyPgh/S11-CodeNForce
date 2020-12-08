@@ -57,6 +57,24 @@ namespace BlogThing.Controllers
         public async Task<IActionResult> Create([Bind("Id,Pacc,SubmissionDate,Address1,Address2,City,State,ZIP,Phone,AddressID,IssueType,ComplaintDescription,PublicNotes,PrivateNotes,HumanSafety,Notes")] Complaint complaint)
         {
             complaint.SubmissionDate = DateTime.Now;
+
+            // generate random six-digit int
+            // check if another complaint has that PACC
+            // if not, assign it
+
+            Random rng = new Random();
+            while (complaint.Pacc == 0)
+            {
+                int PaccAttempt = rng.Next(1, 1000000);
+
+                var conflict = await _context.Complaints
+                    .FirstOrDefaultAsync(c => c.Pacc == PaccAttempt);
+                if (conflict == null)
+                {
+                    complaint.Pacc = PaccAttempt;
+                }
+            }
+
             if (ModelState.IsValid)
             {
                 _context.Add(complaint);
