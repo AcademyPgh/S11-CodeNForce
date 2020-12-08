@@ -46,11 +46,18 @@
                             <p>Report</p>
                         </a>
                     </li>
-                    
+
                     <li class="@Html.IsSelected(controllers: "Home", actions: "Testss", cssClass: "barisactive") nav-item">
                         <a class="nav-link" href="@Url.Action("Testss", "Home")">
                             <i class="material-icons">dashboard</i>
                             <p>Rental Registration</p>
+                        </a>
+                    </li>
+
+                    <li class="@Html.IsSelected(controllers: "Complaints", actions: "Index", cssClass: "barisactive") nav-item">
+                        <a class="nav-link" href="@Url.Action("Index", "Complaints")">
+                            <i class="material-icons">dashboard</i>
+                            <p>View Dem Snitches</p>
                         </a>
                     </li>
 

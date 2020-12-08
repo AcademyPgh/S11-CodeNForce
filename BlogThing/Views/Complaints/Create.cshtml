@@ -25,18 +25,12 @@
                             </fieldset>
                             <fieldset>
                                 <div class="form-card">
-                                    <label asp-for="Pacc" class="control-label"></label>
-                                    <input asp-for="Pacc" class="form-control" />
-                                    <span asp-validation-for="Pacc" class="text-danger"></span>
                                     <label asp-for="SubmissionDate" class="control-label"></label>
                                     <input asp-for="SubmissionDate" class="form-control" />
                                     <span asp-validation-for="SubmissionDate" class="text-danger"></span>
                                     <label asp-for="Address1" class="control-label"></label>
                                     <input asp-for="Address1" class="form-control" />
                                     <span asp-validation-for="Address1" class="text-danger"></span>
-                                    <label asp-for="Address2" class="control-label"></label>
-                                    <input asp-for="Address2" class="form-control" />
-                                    <span asp-validation-for="Address2" class="text-danger"></span>
                                     <label asp-for="City" class="control-label"></label>
                                     <input asp-for="City" class="form-control" />
                                     <span asp-validation-for="City" class="text-danger"></span>
@@ -46,6 +40,10 @@
                                     <label asp-for="ZIP" class="control-label"></label>
                                     <input asp-for="ZIP" class="form-control" />
                                     <span asp-validation-for="ZIP" class="text-danger"></span>
+                                    <label asp-for="Address2" class="control-label"></label>
+                                    <input asp-for="Address2" class="form-control" />
+                                    <span asp-validation-for="Address2" class="text-danger"></span>
+
                                 </div> <input type="button" name="previous" class="previous action-button-previous" value="Previous" /> <input type="button" name="next" class="next action-button" value="Next Step" />
                             </fieldset>
                             <fieldset>
@@ -74,9 +72,6 @@
                                         </label>
                                     </div>
                                 </div> <input type="button" name="previous" class="previous action-button-previous" value="Previous" /> <input type="submit" name="make_payment" class="next action-button" value="Confirm" />
-                                <div class="form-group">
-                                    <input type="submit" value="Create" class="btn btn-primary" />
-                                </div>
                             </fieldset>
                             <fieldset>
                                 <div class="form-card">
