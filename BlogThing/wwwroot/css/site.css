@@ -315,6 +315,29 @@ select.list-dt:focus {
   width: 100%;
   object-fit: cover
 }
-/* .westbkgrd {
-  background-image: url(https://i.ibb.co/bXvnVTS/westinghouse.jpg);
-} */
+
+
+.row-center{
+  display: flex;
+  justify-content: center;
+}
+
+.row-center > .col-md-6 {
+  flex: auto;
+  max-width: 400px;
+}
+
+.card-home {
+  height: 200px;
+}
+  
+#msform input, #msform textarea, #complaint-box {
+  border: 1px solid #d2d2d2;
+  border-radius: .25rem;
+}
+
+#msform input:focus, #msform textarea:focus, #complaint-box {
+  border: 1px solid #d2d2d2;
+  border-radius: .25rem;
+}
+
