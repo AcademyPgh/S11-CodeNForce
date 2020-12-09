@@ -1,13 +1,13 @@
 ﻿@model BlogThing.Models.Complaint
 
 <!-- MultiStep Form -->
-<div class="container-fluid" >
+<div class="container-fluid">
     <div class="row justify-content-center mt-0">
-        
+
         <div class="col-11 col-sm-9 col-md-7 col-lg-6 text-center p-0 mt-3 mb-2">
             <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
                 <h2><strong>Report Concern of Code Violation</strong></h2>
-                <p>Fill all form fields to continue to the next step</p>
+                <p>Fill all form fields to continue. Then upload photos of violation</p>
                 <div class="row" style="position: relative;">
                     <div class="col-md-12 mx-0">
                         <form asp-action="Create" id="msform">
@@ -17,14 +17,16 @@
                                 <li class="active" id="account"><strong>Location</strong></li>
                                 <li id="personal"><strong>Concern</strong></li>
                                 <li id="payment"><strong>My Info</strong></li>
-                                <li id="confirm"><strong>Complete</strong></li>
+                                <li id="confirm"><strong>Submit</strong></li>
+                                <li id="upload-photo"><strong>Photos</strong></li>
                             </ul>
                             <!-- fieldsets -->
                             <fieldset>
                                 <div class="form-card">
                                     <h2 class="fs-title">Location of Concern</h2>
 
-                                    <p>Enter the location of the violation. Street name should include street type with no punctuation, e.g. "E MAIN ST"</p>
+                                    <p>Enter the location of the violation. Street name should include street type with
+                                        no punctuation, e.g. "E MAIN ST"</p>
                                     <label class="control-label">House Number </label>
                                     <input id="houseNumber" class="form-control" />
                                     <label class="control-label">Street Name</label>
@@ -32,10 +34,10 @@
                                     <label class="control-label">ZIP</label>
                                     <input id="zip" class="form-control" />
                                     <input type="button" onclick="addressApiSearch()" value="Search for address" />
-                                    <input type="hidden" asp-for="AddressID"/>
+                                    <input type="hidden" asp-for="AddressID" />
                                     <span asp-validation-for="AddressID" class="text-danger"></span>
                                 </div>
-                                <input type="button" name="next" class="next action-button" value="Next Step"/>
+                                <input type="button" name="next" class="next action-button" value="Next Step" />
 
                             </fieldset>
                             <fieldset>
@@ -44,12 +46,14 @@
                                     <label asp-for="IssueType" class="control-label">What is the issue?</label>
                                     <select asp-for="IssueType" class="form-control"></select>
                                     <span asp-validation-for="IssueType" class="text-danger"></span>
-                                    <label asp-for="ComplaintDescription" class="control-label">What is your concern?</label>
-                                    <textarea id="complaint-box" rows="10" asp-for="ComplaintDescription" class="form-control form-block"></textarea>
+                                    <label asp-for="ComplaintDescription" class="control-label">What is your
+                                        concern?</label>
+                                    <textarea id="complaint-box" rows="10" asp-for="ComplaintDescription"
+                                        class="form-control form-block"></textarea>
                                     <span asp-validation-for="ComplaintDescription" class="text-danger"></span>
 
-                                </div> 
-                                <input type="button" name="previous" class="previous action-button-previous" value="Previous" /> 
+                                </div>
+                                <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
 
                                 <input type="button" name="next" class="next action-button" value="Next Step" />
                             </fieldset>
@@ -57,40 +61,46 @@
                                 <div class="form-card">
                                     <h2 class="fs-title">Contact Info</h2>
                                     <label asp-for="Address1" class="control-label">Your address</label>
-                                    <input asp-for="Address1" class="form-control" required/>
+                                    <input asp-for="Address1" class="form-control" required />
                                     <span asp-validation-for="Address1" class="text-danger"></span>
                                     <label asp-for="Address2" class="control-label">Apt Number</label>
                                     <input asp-for="Address2" class="form-control" />
                                     <span asp-validation-for="Address2" class="text-danger"></span>
                                     <label asp-for="City" class="control-label"></label>
-                                    <input asp-for="City" class="form-control" required/>
+                                    <input asp-for="City" class="form-control" required />
                                     <span asp-validation-for="City" class="text-danger"></span>
                                     <label asp-for="State" class="control-label"></label>
-                                    <input asp-for="State" class="form-control" required/>
+                                    <input asp-for="State" class="form-control" required />
                                     <span asp-validation-for="State" class="text-danger"></span>
                                     <label asp-for="ZIP" class="control-label"></label>
-                                    <input asp-for="ZIP" class="form-control" required/>
+                                    <input asp-for="ZIP" class="form-control" required />
                                     <label asp-for="Phone" class="control-label"></label>
-                                    <input asp-for="Phone" class="form-control" required/>
+                                    <input asp-for="Phone" class="form-control" required />
                                     <span asp-validation-for="Phone" class="text-danger"></span>
 
                                 </div>
-                                <input type="button" name="previous" class="previous action-button-previous" value="Previous" /> 
-                                <input type="Submit" name="make_payment" class="next action-button" value="Submit"/>
+                                <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                                <input type="button" name="next" class="next action-button" value="Next Step" />
 
                             </fieldset>
                             <fieldset>
                                 <div class="form-card">
-                                    <h2 class="fs-title text-center">Success !</h2> <br><br>
-                                    <div class="row justify-content-center">
-                                        <div class="col-3"> <img src="https://img.icons8.com/color/96/000000/ok--v2.png" class="fit-image"> </div>
-                                    </div> <br><br>
+                                    <h2 class="fs-title text-center">You're Almost Done!</h2>
+                                    @* <div class="row justify-content-center">
+                                        <div class="col-3"> <img src="https://img.icons8.com/color/96/000000/ok--v2.png"
+                                                class="fit-image"> </div>
+                                    </div> <br><br> *@
                                     <div class="row justify-content-center">
                                         <div class="col-7 text-center">
-                                            <h5>Your concern has been registered.</h5>
+                                            <h5>To complete your submission, please upload photos to provide a complete report.</h5>
                                         </div>
                                     </div>
+                                    <div class="row justify-content-center">
+                                        <button type="submit" class="btn btn-secondary form-control col-6" >Submit Without Photos</button>
+                                        <button type="submit" class="btn btn-success form-control col-6" >Submit and Upload Photos</button>
+                                    </div>
                                 </div>
+                                <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
                             </fieldset>
                         </form>
                     </div>
