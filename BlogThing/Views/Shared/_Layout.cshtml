@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 
-    <script src="https://kit.fontawesome.com/4afdd5b945.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -53,17 +52,17 @@
                     </li>
 
                     <li
-                        class="@Html.IsSelected(controllers: "Complaints", actions: "CreateOG", cssClass: "barisactive") nav-item">
-                        <a class="nav-link" href="@Url.Action("CreateOG", "Complaints")">
+                        class="@Html.IsSelected(controllers: "Image", actions: "Index", cssClass: "barisactive") nav-item">
+                        <a class="nav-link" href="@Url.Action("Index", "Image")">
                             <i class="material-icons"></i>
-                            <p>Rental Registration</p>
+                            <p>Image Upload Page</p>
                         </a>
                     </li>
 
                     <li class="@Html.IsSelected(controllers: "Complaints", actions: "Index", cssClass: "barisactive") nav-item">
                         <a class="nav-link" href="@Url.Action("Index", "Complaints")">
                             <i class="material-icons"></i>
-                            <p>View Dem Snitches</p>
+                            <p>View All Complaints</p>
                         </a>
                     </li>
 

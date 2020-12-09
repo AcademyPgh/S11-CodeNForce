@@ -46,13 +46,18 @@ namespace BlogThing.Controllers
             {
                 Image image = new Image();
                 image.FileName = fileName;
-                image.ComplaintId = 1;
+                image.ComplaintId = 7;
                 db.Images.Add(image);
                 db.SaveChanges();
                 return true;
             }
 
             return false;
+        }
+
+        public IActionResult DonesoImg()
+        {
+            return View();
         }
     }
 }

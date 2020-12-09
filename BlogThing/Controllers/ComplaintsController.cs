@@ -79,19 +79,11 @@ namespace BlogThing.Controllers
             {
                 _context.Add(complaint);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Doneso));
+                //return RedirectToAction(nameof(ImageController.DonesoImg));
+                return View("~/Views/Image/DonesoImg.cshtml");
             }
             return View(complaint);
         }
-        public IActionResult Doneso()
-        {
-            return View();
-        }
-        public IActionResult CreateOG()
-        {
-            return View();
-        }
-
 
         // GET: Complaints/Edit/5
         public async Task<IActionResult> Edit(int? id)
