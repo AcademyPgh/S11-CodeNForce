@@ -17,5 +17,6 @@ namespace BlogThing.Data
         public DbSet<SecurityGroup> Groups { get; set; }
 
         public DbSet<Complaint> Complaints {get; set;}
+        public DbSet<Image> Images { get; set; }
     }
 }
