@@ -14,7 +14,7 @@
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <!-- progressbar -->
                             <ul id="progressbar">
-                                <li class="active fad fa-map-pin"><strong>Location</strong></li>
+                                <li class="active" id="account"><strong>Location</strong></li>
                                 <li id="personal"><strong>Concern</strong></li>
                                 <li id="payment"><strong>My Info</strong></li>
                                 <li id="confirm"><strong>Complete</strong></li>
@@ -23,6 +23,7 @@
                             <fieldset>
                                 <div class="form-card">
                                     <h2 class="fs-title">Location of Concern</h2>
+
                                     <p>Enter the location of the violation. Street name should include street type with no punctuation, e.g. "E MAIN ST"</p>
                                     <label class="control-label">House Number </label>
                                     <input id="houseNumber" class="form-control" />
@@ -35,6 +36,7 @@
                                     <span asp-validation-for="AddressID" class="text-danger"></span>
                                 </div>
                                 <input type="button" name="next" class="next action-button" value="Next Step"/>
+
                             </fieldset>
                             <fieldset>
                                 <div class="form-card">
@@ -45,8 +47,10 @@
                                     <label asp-for="ComplaintDescription" class="control-label">What is your concern?</label>
                                     <textarea id="complaint-box" rows="10" asp-for="ComplaintDescription" class="form-control form-block"></textarea>
                                     <span asp-validation-for="ComplaintDescription" class="text-danger"></span>
+
                                 </div> 
                                 <input type="button" name="previous" class="previous action-button-previous" value="Previous" /> 
+
                                 <input type="button" name="next" class="next action-button" value="Next Step" />
                             </fieldset>
                             <fieldset>
@@ -69,9 +73,11 @@
                                     <label asp-for="Phone" class="control-label"></label>
                                     <input asp-for="Phone" class="form-control" required/>
                                     <span asp-validation-for="Phone" class="text-danger"></span>
+
                                 </div>
                                 <input type="button" name="previous" class="previous action-button-previous" value="Previous" /> 
                                 <input type="Submit" name="make_payment" class="next action-button" value="Submit"/>
+
                             </fieldset>
                             <fieldset>
                                 <div class="form-card">
