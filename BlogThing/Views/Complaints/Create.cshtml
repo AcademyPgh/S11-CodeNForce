@@ -13,7 +13,7 @@
                         <form id="msform">
                             <!-- progressbar -->
                             <ul id="progressbar">
-                                <li class="active" id="account"><strong>Location</strong></li>
+                                <li class="active fad fa-map-pin"><strong>Location</strong></li>
                                 <li id="personal"><strong>Concern</strong></li>
                                 <li id="payment"><strong>My Info</strong></li>
                                 <li id="confirm"><strong>Complete</strong></li>
@@ -21,22 +21,15 @@
                             <fieldset>
                                 <div class="form-card">
                                     <h2 class="fs-title">Location of Concern</h2>
-                                    <label asp-for="Address1" class="control-label">Address of violation</label>
-                                    <input asp-for="Address1" class="form-control" />
-                                    <span asp-validation-for="Address1" class="text-danger"></span>
-                                    @* <label asp-for="Address2" class="control-label"></label>
-                                        <input asp-for="Address2" class="form-control" />
-                                        <span asp-validation-for="Address2" class="text-danger"></span> *@
-                                    <label asp-for="City" class="control-label"></label>
-                                    <input asp-for="City" class="form-control" />
-                                    <span asp-validation-for="City" class="text-danger"></span>
-                                    <label asp-for="State" class="control-label"></label>
-                                    <input asp-for="State" class="form-control" />
-                                    <span asp-validation-for="State" class="text-danger"></span>
-                                    <label asp-for="ZIP" class="control-label"></label>
-                                    <input asp-for="ZIP" class="form-control" />
-                                    <span asp-validation-for="ZIP" class="text-danger"></span>
-                                </div> <input type="button" name="next" class="next action-button" value="Next Step" />
+                                    <label   class="control-label">House Number </label>
+                                    <input  id="houseNumber" class="form-control" />
+                                    <span  class="text-danger"></span>
+                                    <label  class="control-label">Street Name</label>
+                                    <input  id="streetName" class="form-control" />
+                                    <span  class="text-danger"></span>
+                                    <label  class="control-label">ZIP</label>
+                                    <input  id="zip" class="form-control" />
+                                </div> <input type="button" name="next" class="next action-button" value="Next Step" onclick="search()"/>
                             </fieldset>
                             <fieldset>
                                 <div class="form-card">
@@ -62,8 +55,20 @@
                             <fieldset>
                                 <div class="form-card">
                                     <h2 class="fs-title">Contact Info</h2>
-                                    <label for="Email" class="control-label">Email</label>
-                                    <input type="email" name="Email" />
+                                    <label asp-for="Address1" class="control-label">Your address</label>
+                                    <input asp-for="Address1" class="form-control" />
+                                    <span asp-validation-for="Address1" class="text-danger"></span>
+                                    <label asp-for="Address2" class="control-label">Apt Number</label>
+                                    <input asp-for="Address2" class="form-control" />
+                                    <span asp-validation-for="Address2" class="text-danger"></span>
+                                    <label asp-for="City" class="control-label"></label>
+                                    <input asp-for="City" class="form-control" />
+                                    <span asp-validation-for="City" class="text-danger"></span>
+                                    <label asp-for="State" class="control-label"></label>
+                                    <input asp-for="State" class="form-control" />
+                                    <span asp-validation-for="State" class="text-danger"></span>
+                                    <label asp-for="ZIP" class="control-label"></label>
+                                    <input asp-for="ZIP" class="form-control" />
                                     <label asp-for="Phone" class="control-label"></label>
                                     <input asp-for="Phone" class="form-control" />
                                     <span asp-validation-for="Phone" class="text-danger"></span>
