@@ -238,17 +238,17 @@ select.list-dt:focus {
 
 #progressbar #account:before {
   font-family: FontAwesome;
-  content: "\f023"
+  content: "\f3c5"
 }
 
 #progressbar #personal:before {
   font-family: FontAwesome;
-  content: "\f007"
+  content: "\f071"
 }
 
 #progressbar #payment:before {
   font-family: FontAwesome;
-  content: "\f09d"
+  content: "\f2b9"
 }
 
 #progressbar #confirm:before {
@@ -340,4 +340,15 @@ select.list-dt:focus {
   border: 1px solid #d2d2d2;
   border-radius: .25rem;
 }
-
+.main-panel>.content {
+  margin-top: 0px;
+  padding: 0px;
+}
+#nav-logo {
+  color: white;
+  text-align: center;
+  padding-top: .5em;
+}
+#welcome-title {
+  padding-top: 75px;
+}
