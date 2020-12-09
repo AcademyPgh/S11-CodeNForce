@@ -334,13 +334,14 @@ select.list-dt {
 .card-home {
     height: 200px;
 }
-
+  
 #msform input, #msform textarea, #complaint-box {
-    border: 1px solid #d2d2d2;
-    border-radius: .25rem;
+  border: 1px solid #d2d2d2;
+  border-radius: .25rem;
 }
 
-    #msform input:focus, #msform textarea:focus, #complaint-box {
-        border: 1px solid #d2d2d2;
-        border-radius: .25rem;
-    }
+#msform input:focus, #msform textarea:focus, #complaint-box {
+  border: 1px solid #d2d2d2;
+  border-radius: .25rem;
+}
+

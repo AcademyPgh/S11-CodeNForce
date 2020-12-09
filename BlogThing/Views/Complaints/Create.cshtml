@@ -3,6 +3,7 @@
 <!-- MultiStep Form -->
 <div class="container-fluid" >
     <div class="row justify-content-center mt-0">
+        
         <div class="col-11 col-sm-9 col-md-7 col-lg-6 text-center p-0 mt-3 mb-2">
             <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
                 <h2><strong>Report Concern of Code Violation</strong></h2>
@@ -13,7 +14,7 @@
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <!-- progressbar -->
                             <ul id="progressbar">
-                                <li class="active" id="account"><strong>Location</strong></li>
+                                <li class="active fad fa-map-pin"><strong>Location</strong></li>
                                 <li id="personal"><strong>Concern</strong></li>
                                 <li id="payment"><strong>My Info</strong></li>
                                 <li id="confirm"><strong>Complete</strong></li>
@@ -92,30 +93,3 @@
         </div>
     </div>
 </div>
-
-@*<script>
-    function addressApiSearch() {
-        const houseNumber = document.getElementById("houseNumber").value;
-        const streetName = document.getElementById("streetName").value.toUpperCase();
-        const zipCode = document.getElementById("zip").value;
-
-        const searchURL = `https://data.wprdc.org/api/3/action/datastore_search?filters={\"PROPERTYZIP\": \"${zipCode}\", \"PROPERTYHOUSENUM\":\"${houseNumber}\", \"PROPERTYADDRESS\":\"${streetName}\"}&resource_id=518b583f-7cc8-4f60-94d0-174cc98310dc&fields=\"_id\"`;
-
-        console.log(searchURL);
-
-        var request = new XMLHttpRequest();
-
-        request.open('GET', searchURL);
-
-        request.onload = function () {
-            var data = JSON.parse(this.response);
-
-            if (data.result.records.length == 1) {
-                var property = data.result.records[0];
-                document.getElementById("AddressID").value = property._id;
-            }
-        }
-
-        request.send();
-    }
-</script>*@

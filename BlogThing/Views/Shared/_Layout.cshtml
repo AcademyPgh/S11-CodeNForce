@@ -12,8 +12,6 @@
     <link href="~/css/material-dashboard.min.css?v=2.1.2" rel="stylesheet" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
-
-
 </head>
 
 <body>
@@ -49,8 +47,7 @@
                         </a>
                     </li>
 
-                    <li
-                        class="@Html.IsSelected(controllers: "Image", actions: "Index", cssClass: "barisactive") nav-item">
+                    <li class="@Html.IsSelected(controllers: "Image", actions: "Index", cssClass: "barisactive") nav-item">
                         <a class="nav-link" href="@Url.Action("Index", "Image")">
                             <i class="material-icons"></i>
                             <p>Image Upload Page</p>
