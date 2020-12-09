@@ -71,7 +71,8 @@ $(document).ready(function () {
     })
 
 });
-function search() {
+
+function addressApiSearch() {
     const houseNumber = document.getElementById("houseNumber").value;
     const streetName = document.getElementById("streetName").value.toUpperCase();
     const zipCode = document.getElementById("zip").value; 
@@ -86,16 +87,11 @@ function search() {
 
     request.onload = function () {
         var data = JSON.parse(this.response);
-        console.log(data);
-        console.log(data.result);
-        if (data.result.records.length == 0) {
-            document.getElementById("FoundProperty").innerHTML = "Property not found."
-        }
-        else if (data.result.records.length == 1) {
-            var property = data.result.records[0];
-            document.getElementById("FoundProperty").innerHTML = property._id;
-        }
 
+        if (data.result.records.length == 1) {
+            var property = data.result.records[0];
+            document.getElementById("AddressID").value = property._id;
+        }
     }
 
     request.send();
