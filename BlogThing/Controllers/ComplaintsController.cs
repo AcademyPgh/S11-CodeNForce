@@ -79,8 +79,7 @@ namespace BlogThing.Controllers
             {
                 _context.Add(complaint);
                 await _context.SaveChangesAsync();
-                //return RedirectToAction(nameof(ImageController.DonesoImg));
-                return View("~/Views/Image/DonesoImg.cshtml");
+                return RedirectToAction("DonesoImg", "Image", new { ComplaintId = complaint.Id });
             }
             return View(complaint);
         }

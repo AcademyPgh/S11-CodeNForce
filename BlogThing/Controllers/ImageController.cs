@@ -31,8 +31,11 @@ namespace BlogThing.Controllers
 
         // submit image
         [HttpPost]
-        public bool SubmitPicture(IFormFile picture)
+        public bool SubmitPicture(IFormFile picture, int ComplaintId)
         {
+            //int isnt being used here
+            int x = ComplaintId;
+
             string connectionString = config.GetValue<string>("AzureConnectionString");
             AzureHelper azure = new AzureHelper(connectionString, "codenforce");
             // upload to azure
@@ -46,7 +49,7 @@ namespace BlogThing.Controllers
             {
                 Image image = new Image();
                 image.FileName = fileName;
-                image.ComplaintId = 7;
+                image.ComplaintId = x;
                 db.Images.Add(image);
                 db.SaveChanges();
                 return true;
@@ -55,8 +58,9 @@ namespace BlogThing.Controllers
             return false;
         }
 
-        public IActionResult DonesoImg()
+        public IActionResult DonesoImg(int ComplaintId)
         {
+            ViewData["CompId"] = ComplaintId;
             return View();
         }
     }

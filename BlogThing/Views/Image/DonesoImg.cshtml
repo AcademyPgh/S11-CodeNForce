@@ -12,8 +12,9 @@
                             <div class="text-danger"></div>
                             <fieldset>
                                 <input type="file" name="picture" />
-                                @*<button type="submit">Send Picture</button>*@
-                                <input type="submit" class="next action-button" value="Upload Pic" />
+                                  @*<div>@ViewData["CompId"]</div>*@
+                                <input name="ComplaintId" type="hidden" value="@ViewData["CompId"]" />
+                                <input type="submit" class="next action-button" value="Upload" />
                             </fieldset>
                         </form>
                     </div>
