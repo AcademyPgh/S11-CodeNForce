@@ -22,7 +22,7 @@ namespace BlogThing.Controllers
         // GET: Complaints
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Complaints.ToListAsync());
+            return View(await _context.Complaints.Include(c => c.Images).ToListAsync());
         }
 
         // GET: Complaints/Details/5
@@ -79,7 +79,7 @@ namespace BlogThing.Controllers
             {
                 _context.Add(complaint);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("DonesoImg", "Image", new { ComplaintId = complaint.Id });
             }
             return View(complaint);
         }

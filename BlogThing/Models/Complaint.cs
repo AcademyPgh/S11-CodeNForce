@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace BlogThing.Models
@@ -27,6 +28,8 @@ namespace BlogThing.Models
         public string Notes { get; set; }
         public SecurityUser User { get; set; }
         public CECase CECase { get; set; }
+
+        public virtual List<Image> Images { get; set; }
     }
 
     public class CECase
