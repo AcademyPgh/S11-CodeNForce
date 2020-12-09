@@ -1,62 +1,94 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-<script>
-    function search() {
-        const houseNumber = document.getElementById("houseNumber").value;
-        const streetName = document.getElementById("streetName").value.toUpperCase();
-        const zipCode = document.getElementById("zip").value; 
+﻿@model BlogThing.Models.Complaint
 
-        const searchURL = `https://data.wprdc.org/api/3/action/datastore_search?filters={\"PROPERTYZIP\": \"${zipCode}\", \"PROPERTYHOUSENUM\":\"${houseNumber}\", \"PROPERTYADDRESS\":\"${streetName}\"}&resource_id=518b583f-7cc8-4f60-94d0-174cc98310dc&fields=\"_id\"`;
-
-        console.log(searchURL);
-
-        var request = new XMLHttpRequest();
-
-        request.open('GET', searchURL);
-
-        request.onload = function () {
-            var data = JSON.parse(this.response);
-            console.log(data);
-            console.log(data.result);
-            if (data.result.records.length == 0) {
-                document.getElementById("FoundProperty").innerHTML = "Property not found."
-            }
-            else if (data.result.records.length == 1) {
-                var property = data.result.records[0];
-                document.getElementById("FoundProperty").innerHTML = property._id;
-            }
-
-        }
-
-        request.send();
-    }
-</script>
-
-<div>
-    <form id="address">
-        <ul>
-            <li>
-                <label for="houseNumber">House number</label><br />
-                <input type="text" name="houseNumber" id="houseNumber"/>
-            </li>
-            <li>
-                <label for="streetName">Street name</label><br />
-                <input type="text" name="streetName" id="streetName" />
-            </li>
-            <li>
-                <label for="zip"></label>ZIP<br />
-                <input type="text" name="zip" id="zip"/>
-            </li>
-            <li>
-                <input type="button" value="Search" onClick="search()"/>
-            </li>
-        </ul>
-    </form>
-    <div id="FoundProperty">
-
+<!-- MultiStep Form -->
+<div class="container-fluid" >
+    <div class="row justify-content-center mt-0">
+        
+        <div class="col-11 col-sm-9 col-md-7 col-lg-6 text-center p-0 mt-3 mb-2">
+            <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+                <h2><strong>Report Concern of Code Violation</strong></h2>
+                <p>Fill all form fields to continue to the next step</p>
+                <div class="row" style="position: relative;">
+                    <div class="col-md-12 mx-0">
+                        <form id="msform">
+                            <!-- progressbar -->
+                            <ul id="progressbar">
+                                <li class="active" id="account"><strong>Location</strong></li>
+                                <li id="personal"><strong>Concern</strong></li>
+                                <li id="payment"><strong>My Info</strong></li>
+                                <li id="confirm"><strong>Complete</strong></li>
+                            </ul> <!-- fieldsets -->
+                            <fieldset>
+                                <div class="form-card">
+                                    <h2 class="fs-title">Location of Concern</h2>
+                                    <label asp-for="Address1" class="control-label">Address of violation</label>
+                                    <input asp-for="Address1" class="form-control" />
+                                    <span asp-validation-for="Address1" class="text-danger"></span>
+                                    @* <label asp-for="Address2" class="control-label"></label>
+                                        <input asp-for="Address2" class="form-control" />
+                                        <span asp-validation-for="Address2" class="text-danger"></span> *@
+                                    <label asp-for="City" class="control-label"></label>
+                                    <input asp-for="City" class="form-control" />
+                                    <span asp-validation-for="City" class="text-danger"></span>
+                                    <label asp-for="State" class="control-label"></label>
+                                    <input asp-for="State" class="form-control" />
+                                    <span asp-validation-for="State" class="text-danger"></span>
+                                    <label asp-for="ZIP" class="control-label"></label>
+                                    <input asp-for="ZIP" class="form-control" />
+                                    <span asp-validation-for="ZIP" class="text-danger"></span>
+                                </div> <input type="button" name="next" class="next action-button" value="Next Step" />
+                            </fieldset>
+                            <fieldset>
+                                <div class="form-card">
+                                    <h2 class="fs-title">Violation</h2>
+                                    <label asp-for="IssueType" class="control-label">What is the issue?</label>
+                                    <select asp-for="IssueType" class="form-control"></select>
+                                    <span asp-validation-for="IssueType" class="text-danger"></span>
+                                    <label asp-for="ComplaintDescription" class="control-label">What is your
+                                        concern?</label>
+                                    <textarea id="complaint-box" rows="10" asp-for="ComplaintDescription"
+                                        class="form-control form-block"></textarea>
+                                    <span asp-validation-for="ComplaintDescription" class="text-danger"></span>
+                                    @* <label asp-for="PublicNotes" class="control-label"></label>
+                                        <input asp-for="PublicNotes" class="form-control" />
+                                        <span asp-validation-for="PublicNotes" class="text-danger"></span>
+                                        <label asp-for="PrivateNotes" class="control-label"></label>
+                                        <input asp-for="PrivateNotes" class="form-control" />
+                                        <span asp-validation-for="PrivateNotes" class="text-danger"></span> *@
+                                </div> <input type="button" name="previous" class="previous action-button-previous"
+                                    value="Previous" /> <input type="button" name="next" class="next action-button"
+                                    value="Next Step" />
+                            </fieldset>
+                            <fieldset>
+                                <div class="form-card">
+                                    <h2 class="fs-title">Contact Info</h2>
+                                    <label for="Email" class="control-label">Email</label>
+                                    <input type="email" name="Email" />
+                                    <label asp-for="Phone" class="control-label"></label>
+                                    <input asp-for="Phone" class="form-control" />
+                                    <span asp-validation-for="Phone" class="text-danger"></span>
+                                </div> <input type="button" name="previous" class="previous action-button-previous"
+                                    value="Previous" /> <input type="button" name="make_payment"
+                                    class="next action-button" value="Confirm" />
+                            </fieldset>
+                            <fieldset>
+                                <div class="form-card">
+                                    <h2 class="fs-title text-center">Success !</h2> <br><br>
+                                    <div class="row justify-content-center">
+                                        <div class="col-3"> <img src="https://img.icons8.com/color/96/000000/ok--v2.png"
+                                                class="fit-image"> </div>
+                                    </div> <br><br>
+                                    <div class="row justify-content-center">
+                                        <div class="col-7 text-center">
+                                            <h5>Your concern has been registered.</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
