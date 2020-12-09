@@ -9,7 +9,8 @@
                 <p>Fill all form fields to continue to the next step</p>
                 <div class="row" style="position: relative;">
                     <div class="col-md-12 mx-0">
-                        <form id="msform">
+                        <form asp-action="Create" id="msform">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <!-- progressbar -->
                             <ul id="progressbar">
                                 <li class="active fad fa-map-pin"><strong>Location</strong></li>
@@ -32,7 +33,7 @@
                                     <input type="hidden" asp-for="AddressID"/>
                                     <span asp-validation-for="AddressID" class="text-danger"></span>
                                 </div> 
-                                <input type="button" name="next" class="next action-button" value="Next Step" onclick="search()"/>
+                                <input type="button" name="next" class="next action-button" value="Next Step"/>
                             </fieldset>
                             <fieldset>
                                 <div class="form-card">
@@ -45,12 +46,6 @@
                                     <textarea id="complaint-box" rows="10" asp-for="ComplaintDescription"
                                         class="form-control form-block"></textarea>
                                     <span asp-validation-for="ComplaintDescription" class="text-danger"></span>
-                                    @* <label asp-for="PublicNotes" class="control-label"></label>
-                                        <input asp-for="PublicNotes" class="form-control" />
-                                        <span asp-validation-for="PublicNotes" class="text-danger"></span>
-                                        <label asp-for="PrivateNotes" class="control-label"></label>
-                                        <input asp-for="PrivateNotes" class="form-control" />
-                                        <span asp-validation-for="PrivateNotes" class="text-danger"></span> *@
                                 </div> <input type="button" name="previous" class="previous action-button-previous"
                                     value="Previous" /> <input type="button" name="next" class="next action-button"
                                     value="Next Step" />
@@ -59,25 +54,26 @@
                                 <div class="form-card">
                                     <h2 class="fs-title">Contact Info</h2>
                                     <label asp-for="Address1" class="control-label">Your address</label>
-                                    <input asp-for="Address1" class="form-control" />
+                                    <input asp-for="Address1" class="form-control" required/>
                                     <span asp-validation-for="Address1" class="text-danger"></span>
                                     <label asp-for="Address2" class="control-label">Apt Number</label>
-                                    <input asp-for="Address2" class="form-control" />
+                                    <input asp-for="Address2" class="form-control" required/>
                                     <span asp-validation-for="Address2" class="text-danger"></span>
                                     <label asp-for="City" class="control-label"></label>
-                                    <input asp-for="City" class="form-control" />
+                                    <input asp-for="City" class="form-control" required/>
                                     <span asp-validation-for="City" class="text-danger"></span>
                                     <label asp-for="State" class="control-label"></label>
-                                    <input asp-for="State" class="form-control" />
+                                    <input asp-for="State" class="form-control" required/>
                                     <span asp-validation-for="State" class="text-danger"></span>
                                     <label asp-for="ZIP" class="control-label"></label>
-                                    <input asp-for="ZIP" class="form-control" />
+                                    <input asp-for="ZIP" class="form-control" required/>
                                     <label asp-for="Phone" class="control-label"></label>
-                                    <input asp-for="Phone" class="form-control" />
+                                    <input asp-for="Phone" class="form-control" required/>
                                     <span asp-validation-for="Phone" class="text-danger"></span>
-                                </div> <input type="button" name="previous" class="previous action-button-previous"
-                                    value="Previous" /> <input type="button" name="make_payment"
-                                    class="next action-button" value="Confirm" />
+                                </div> 
+                                <input type="button" name="previous" class="previous action-button-previous"
+                                    value="Previous" /> <input type="submit" name="make_payment"
+                                    class="next action-button" value="Submit"/>
                             </fieldset>
                             <fieldset>
                                 <div class="form-card">

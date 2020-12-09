@@ -75,6 +75,8 @@ namespace BlogThing.Controllers
                 }
             }
 
+            Console.WriteLine(complaint.Pacc);
+
             if (ModelState.IsValid)
             {
                 _context.Add(complaint);
