@@ -241,17 +241,17 @@ select.list-dt {
   position: relative;
 }
 
-#progressbar #account:before {
+#progressbar #location:before {
   font-family: FontAwesome;
   content: "\f3c5"
 }
 
-#progressbar #personal:before {
+#progressbar #concern:before {
   font-family: FontAwesome;
   content: "\f071"
 }
 
-#progressbar #payment:before {
+#progressbar #my-info:before {
   font-family: FontAwesome;
   content: "\f2b9"
 }

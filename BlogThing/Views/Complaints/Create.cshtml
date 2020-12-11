@@ -3,20 +3,19 @@
 <!-- MultiStep Form -->
 <div class="container-fluid">
     <div class="row justify-content-center mt-0">
-
         <div class="col-11 col-sm-9 col-md-7 col-lg-6 text-center p-0 mt-3 mb-2">
             <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
                 <h2><strong>Report Concern of Code Violation</strong></h2>
-                <p>Fill all form fields to continue. Then upload photos of violation</p>
+                <p>Fill all form fields to continue. Then you may upload photos of code violation.</p>
                 <div class="row" style="position: relative;">
                     <div class="col-md-12 mx-0">
                         <form asp-action="Create" id="msform">
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <!-- progressbar -->
                             <ul id="progressbar">
-                                <li class="active" id="account"><strong>Location</strong></li>
-                                <li id="personal"><strong>Concern</strong></li>
-                                <li id="payment"><strong>My Info</strong></li>
+                                <li class="active" id="location"><strong>Location</strong></li>
+                                <li id="concern"><strong>Concern</strong></li>
+                                <li id="my-info"><strong>My Info</strong></li>
                                 <li id="confirm"><strong>Submit</strong></li>
                                 <li id="upload-photo"><strong>Photos</strong></li>
                             </ul>
@@ -33,11 +32,13 @@
                                     <input id="streetName" class="form-control" />
                                     <label class="control-label">ZIP</label>
                                     <input id="zip" class="form-control" />
-                                    <input type="button" onclick="addressApiSearch()" value="Search for address" />
+                                    <button type="button" onclick="addressApiSearch()" class="form-control btn-info">Search Address</button>
+                                    @* <input type="button" onclick="addressApiSearch()" value="Search for address" /> *@
                                     <input type="hidden" asp-for="AddressID" />
                                     <span asp-validation-for="AddressID" class="text-danger"></span>
                                 </div>
-                                <input type="button" name="next" class="next action-button" value="Next Step" />
+                                <button type="button" name="next" class="next btn btn-info">Next</button>
+                                @* <input type="button" name="next" class="next action-button" value="Next Step" /> *@
 
                             </fieldset>
                             <fieldset>
@@ -51,11 +52,9 @@
                                     <textarea id="complaint-box" rows="10" asp-for="ComplaintDescription"
                                         class="form-control form-block"></textarea>
                                     <span asp-validation-for="ComplaintDescription" class="text-danger"></span>
-
                                 </div>
-                                <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
-
-                                <input type="button" name="next" class="next action-button" value="Next Step" />
+                                <button type="button" name="previous" class="previous btn btn-default">Back</button>
+                                <button type="button" name="next" class="next btn btn-info">Next</button>
                             </fieldset>
                             <fieldset>
                                 <div class="form-card">
@@ -79,8 +78,10 @@
                                     <span asp-validation-for="Phone" class="text-danger"></span>
 
                                 </div>
-                                <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
-                                <input type="button" name="next" class="next action-button" value="Next Step" />
+                                <button type="button" name="previous" class="previous btn btn-default">Back</button>
+                                <button type="button" name="next" class="next btn btn-info">Next</button>
+                                @* <input type="button" name="previous" class="previous action-button-previous" value="Previous" /> *@
+                                @* <input type="button" name="next" class="next action-button" value="Next Step" /> *@
 
                             </fieldset>
                             <fieldset>
@@ -91,16 +92,16 @@
                                                 class="fit-image"> </div>
                                     </div> <br><br> *@
                                     <div class="row justify-content-center">
-                                        <div class="col-7 text-center">
-                                            <h5>To complete your submission, please upload photos to provide a complete report.</h5>
+                                        <div class="col text-center">
+                                            <h5>To complete your submission, choose a submit option below.</h5>
                                         </div>
                                     </div>
-                                    <div class="row justify-content-center">
-                                        <button type="submit" class="btn btn-secondary form-control col-6" >Submit Without Photos</button>
-                                        <button type="submit" class="btn btn-success form-control col-6" >Submit and Upload Photos</button>
+                                    <div class="row justify-content-around">
+                                        <button type="submit" class="btn btn-secondary" >Submit Without Photos</button>
+                                        <button type="submit" class="btn btn-success" >Submit and Upload Photos</button>
                                     </div>
                                 </div>
-                                <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                                <button type="button" name="previous" class="previous btn btn-default">Back</button>
                             </fieldset>
                         </form>
                     </div>
